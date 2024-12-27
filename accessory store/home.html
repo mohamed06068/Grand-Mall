@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GrandMall Accessories</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#FeaturedAccessory">Featured Accessory</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jewelryaccessories">jewelry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Watches">Watches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Bags">Bags</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Sunglasses">Sunglasses</a></li>
+                    <li class="nav-item">
+                        <button data-quantity="0" class="btn-cart">
+                          <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
+                            <title>cart</title>
+                            <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
+                          </svg>
+                          <span class="quantity"></span>
+                        </button>
+                      </li>
+
+                </ul>
+                <form class="d-flex ms-3">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search products">
+                </form>
+            </div>
+            <a href="#" class="btn btn-outline-light rounded-pill stylish-link" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="fas fa-sign-in-alt me-2"></i>Login
+            </a>
+            <a href="#" class="btn btn-outline-light rounded-pill stylish-link" data-bs-toggle="modal" data-bs-target="#registerModal">
+                <i class="fas fa-user-plus me-2"></i>Register Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control mb-3" placeholder="Enter your full name" required>
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control mb-3" placeholder="Enter your email" required>
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control mb-3" placeholder="Enter your password" required>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <label class="form-label">Username</label>
+                        <input type="text" class=" form-control mb-3" placeholder="Enter your username" required>
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control mb-3" placeholder="Enter your password" required>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Forgot Password?</a>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reset Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="forgotPasswordForm">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control mb-3" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="container-fluid text-white py-5" style="background: linear-gradient(to right, #a148d4, #480463);">
+        <div class="row text-center text-md-start align-items-center">
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Jewelry</h1>
+                <p>Explore our exquisite collection of jewelry, featuring stunning pieces that will elevate your style.</p>
+                <button class="btn btn-light btn-lg" onclick="showModal('Jewelry')">Shop Now</button>
+            </div>
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Bags</h1>
+                <p>Discover a curated selection of stylish and functional bags to complement your everyday needs.</p>
+                <button class="btn btn-light btn-lg" onclick="showModal('Bags')">Shop Now</button>
+            </div>
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Sunglasses</h1>
+                <p>Find the perfect pair of sunglasses to shield your eyes and enhance your look with our stylish collection.</p>
+                <button class="btn btn-light btn-lg" onclick="showModal('Sunglasses')">Shop Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <main class="container my-4">
+        <section class="hero-section">
+            <div>
+                <h1>Welcome to Our Accessory Store</h1>
+                <p>Discover a world of style and sophistication.</p>
+                <button class="custom-btn">Shop Now</button>
+            </div>
+            <div>
+                <img src="accessories.webp" alt="Accessory Store" class="hero-image" width="500px" height="300px"> 
+            </div>
+        </section>
+    
+        <section id="FeaturedAccessory">
+            <div class="section">
+                <h2>Featured Accessory</h2>
+                <div class="product-cards">
+                    <div class="card">
+                        <img src="fwatch1.png" class="card-img-top" alt="Product 1">
+                        <h3> Luxury Watch Brand Chronograph Watch</h3>
+                        <p class="product-price">$1,500</p> 
+                        <button class="btn add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="sung22.png" class="card-img-top" alt="Product 2">
+                        <h3>Designer Brand Oversized Sunglasses</h3>
+                        <p class="product-price">$350</p> 
+                        <button class="btn add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="StudEarrings.png" class="card-img-top" alt="Product 3">
+                        <h3>High-End Jewelry Brand Diamond Stud Earrings</h3>
+                        <p class="product-price">$4,000</p> 
+                        <button class="btn add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="jewelryaccessories" class="section">
+            <h2>Jewelry</h2>
+            <div class="row g-3 mt-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Jewelry1.png" class="card-img-top" alt="Pearl Necklace">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:green">[Brand] Pearl Necklace</h5>
+                            <h6 class="card-text"> A timeless and versatile piece that can be dressed up or down.</h6>
+                        </div>
+                        <div class="product-price">$180</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Jewelry2.png" class="card-img-top" alt="Silver Bracelet">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:orange">[Brand] Silver Bracelet with Charm</h5>
+                            <h6 class="card-text"> A charming and personalized piece that can be customized with different charms to suit individual tastes.</h6>
+                        </div>
+                        <div class="product-price">$120</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Jewelry3.png" class="card-img-top" alt="Gold Hoop Earrings">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:green">[Brand] Gold Hoop Earrings</h5>
+                            <h6 class="card-text">A classic and stylish choice that complements a variety of outfits.</h6>
+                        </div>
+                        <div class="product-price">$250</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="Watches" class="section mt-5">
+            <h2>Watches</h2>
+            <div class="row g-3 mt-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Smartwatch1.png" class="card-img-top" alt="Smartwatch"> 
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:blue">[Brand] Smartwatch</h5>
+                            <h6 class="card-text">A modern and functional watch with fitness tracking and smart notifications.</h6>
+                        </div>
+                        <div class="product-price">$300</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Smartwatch2.png" class="card-img-top" alt="Leather Strap Watch"> 
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:goldenrod">[Brand] Leather Strap Watch</h5>
+                            <h6 class="card-text">A classic and stylish watch with a timeless design.</h6>
+                        </div>
+                        <div class="product-price">$150</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Smartwatch3.png" class="card-img-top" alt="Chronograph Watch"> 
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:yellow">[Brand] Chronograph Watch</h5>
+                            <h6 class="card-text">A sporty and functional watch with multiple chronograph functions.</h6>
+                        </div>
+                        <div class="product-price">$400</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="Bags" class="section mt-5">
+            <h2>Bags</h2>
+            <div class="row g-3 mt-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="bag1.png" class="card-img-top" alt="Leather Tote Bag"> 
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:blue">[Brand] Leather Tote Bag</h5>
+                            <h6 class="card-text">A spacious and stylish bag perfect for everyday use.</h6>
+                        </div>
+                        <div class="product-price">$250</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="bag2.png" class="card-img-top" alt="Crossbody Bag"> 
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:goldenrod">[Brand] Crossbody Bag</h5>
+                            <h6 class="card-text">A practical and stylish bag for carrying essentials on the go.</h6>
+                        </div>
+                        <div class="product-price">$120</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="bag3.png" class="card-img-top" alt="Clutch Purse"> 
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:yellow">[Brand] Clutch Purse</h5>
+                            <h6 class="card-text">A glamorous and elegant bag for evening wear.</h6>
+                        </div>
+                        <div class="product-price">$180</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+                        <!-- Sunglasses Section -->
+                        <section id="Sunglasses" class="section mt-5">
+                            <h2>Sunglasses</h2>
+                            <div class="row g-3 mt-3">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <img src="sung1.png" class="card-img-top" alt="Aviator Sunglasses"> 
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="color:blue">[Brand] Aviator Sunglasses</h5>
+                                            <h6 class="card-text">A timeless and iconic style that suits most face shapes.</h6>
+                                        </div>
+                                        <div class="product-price">$150</div>
+                                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <img src="sung2.png" class="card-img-top" alt="Wayfarer Sunglasses"> 
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="color:goldenrod">[Brand] Wayfarer Sunglasses</h5>
+                                            <h6 class="card-text">A classic and versatile style that has been popular for decades.</h6>
+                                        </div>
+                                        <div class="product-price">$120</div>
+                                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <img src="sung3.png" class="card-img-top" alt="Oversized Sunglasses"> 
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="color:yellow">[Brand] Oversized Sunglasses</h5>
+                                            <h6 class="card-text">A trendy and stylish option for making a statement.</h6>
+                                        </div>
+                                        <div class="product-price">$200</div>
+                                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    
+                    </main>
+
+    <!-- Shop Modal -->
+    <div class="modal fade" id="shopModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+ 
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shopModalLabel">Shop Now</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You selected the <span id="categoryName"></span> category. Browse our collection now!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showModal(category) {
+            document.getElementById("categoryName").textContent = category;
+            new bootstrap.Modal(document.getElementById('shopModal')).show();
+        }
+    </script>
+
+    <footer class="bg-dark text-light text-center p-4 mt-5">
+        <p>&copy; 2024 Supermarket Store. All Rights Reserved.</p>
+        <i class="bi bi-info-circle" style="font-size: 30px; color: rgb(255, 255, 255);"></i>
+        <a href="2/about.html" class="footer-link">About Us</a> |
+        <a href="2/index.html" class="footer-link">Contact</a>
+    </footer>
+</body>
+</html>

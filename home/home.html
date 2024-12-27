@@ -1,0 +1,196 @@
+<!DOCTYPE html> <!-- Declares the document type and version of HTML -->
+<html lang="en"> <!-- Opens the HTML document and sets the language to English -->
+<head> <!-- Begins the head section of the document -->
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on mobile devices -->
+    <title>Grand Mall</title> <!-- Sets the title of the webpage that appears in the browser tab -->
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Links to Bootstrap CSS for styling -->
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> <!-- Links to Bootstrap Icons for icon usage -->
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Links to Font Awesome for additional icons -->
+    <link rel="stylesheet" href="../styles.css"> <!-- Links to a custom stylesheet for additional styles -->
+</head>
+<body> <!-- Begins the body section of the document -->
+    <!-- Navigation Bar -->
+    <header class="fixed-top"> <!-- Creates a fixed navigation bar at the top of the page -->
+      <div class="container d-flex justify-content-between align-items-center"> <!-- Creates a flex container for navigation items -->
+          <a class="navbar-brand" href="#">Grand Mall</a> <!-- Brand name link for the mall -->
+          <nav> <!-- Begins the navigation section -->
+              <ul class="nav"> <!-- Creates an unordered list for navigation items -->
+                  <li class="nav-item"><a href="#" class="nav-link active">Home</a></li> <!-- Home link with active class -->
+                  <li class="nav-item"><a href="#services" class="nav-link">Our Services</a></li> <!-- Link to the services section -->
+                  <li class="nav-item"> <!-- User login icon link -->
+                      <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal"> <!-- Opens the login modal on click -->
+                          <i class="fa-solid fa-user"></i> <!-- User icon from Font Awesome -->
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <button data-quantity="0" class="btn-cart">
+                      <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
+                        <title>cart</title>
+                        <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
+                      </svg>
+                      <span class="quantity"></span>
+                    </button>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"> <!-- Carousel for image slides -->
+        <div class="carousel-indicators"> <!-- Indicators for carousel navigation -->
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button> <!-- First slide indicator -->
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button> <!-- Second slide indicator -->
+        </div>
+        <div class="carousel-inner"> <!-- Container for carousel items -->
+            <div class="carousel-item active"> <!-- First carousel item (active) -->
+              <img  src="../2.webp" class="d-block w-100" alt="Fashion Section"style=" width: 100%; height: 800px;object-fit: cover;border-radius: 8px;"> <!-- Image for the first slide -->
+            </div>
+          <div class="carousel-item"> <!-- Second carousel item -->
+            <img src="../grand.webp" class="d-block w-100" alt="Entertainment Section" style=" width: 100%; height: 800px;object-fit: cover;border-radius: 8px;"> <!-- Image for the second slide -->
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"> <!-- Button for previous slide -->
+          <span class="carousel-control-prev-icon"></span> <!-- Icon for previous slide button -->
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"> <!-- Button for next slide -->
+          <span class="carousel-control-next-icon"></span> <!-- Icon for next slide button -->
+        </button>
+      </div>
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"> <!-- Modal for user login -->
+    <div class="modal-dialog"> <!-- Modal dialog container -->
+      <div class="modal-content"> <!-- Modal content wrapper -->
+        <div class="modal-header"> <!-- Header section of the modal -->
+          <h5 class="modal-title" id="loginModalLabel">Login to Grand Mall</h5> <!-- Title of the modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button> <!-- Close button for the modal -->
+        </div>
+        <div class="modal-body"> <!-- Body section of the modal -->
+          <form id="loginForm"> <!-- Form for user login -->
+            <div class="mb-3"> <!-- Margin bottom for spacing -->
+              <label for="email" class="form-label">Email Address</label> <!-- Label for email input -->
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required> <!-- Email input field -->
+            </div>
+            <label class="form-label">Password</label> <!-- Label for password input -->
+            <input type="password" class="form-control mb-3" placeholder="Enter your password" required> <!-- Password input field -->
+            <button type="submit" class="btn btn-primary w-100">Login</button> <!-- Submit button for login -->
+            <p class="text-center mt-2">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register Now</a></p> <!-- Link to register modal -->
+            <p class="text-center mt-2">Forgot Password? <a href="#" data-bs-toggle="modal" data-bs-target="#forgotModal">Reset Password</a></p> <!-- Link to forgot password modal -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Register Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true"> <!-- Modal for user registration -->
+    <div class="modal-dialog"> <!-- Modal dialog container -->
+      <div class="modal-content"> <!-- Modal content wrapper -->
+        <div class="modal-header"> <!-- Header section of the modal -->
+          <h5 class="modal-title" id="registerModalLabel">Register to Grand Mall</h5> <!-- Title of the modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button> <!-- Close button for the modal -->
+        </div>
+        <div class="modal-body"> <!-- Body section of the modal -->
+          <form id="registerForm"> <!-- Form for user registration -->
+            <label class="form-label">Full Name</label> <!-- Label for full name input -->
+            <input type="text" class="form-control mb-3" placeholder="Enter your full name" required> <!-- Full name input field -->
+            <label class="form-label">Email</label> <!-- Label for email input -->
+            <input type="email" class="form-control mb-3" placeholder="Enter your email" required> <!-- Email input field -->
+            <label class="form-label">Password</label> <!-- Label for password input -->
+            <input type="password" class="form-control mb-3" placeholder="Enter your password" required> <!-- Password input field -->
+            <label class="form-label">Confirm Password</label> <!-- Label for confirm password input -->
+            <input type="password" class="form-control mb-3" placeholder="Confirm your password" required> <!-- Confirm password input field -->
+            <button type="submit" class="btn btn-primary w-100">Register</button> <!-- Submit button for registration -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Forgot Password Modal -->
+  <div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="forgotModalLabel" aria-hidden="true"> <!-- Modal for forgot password -->
+    <div class="modal-dialog"> <!-- Modal dialog container -->
+      <div class="modal-content"> <!-- Modal content wrapper -->
+        <div class="modal-header"> <!-- Header section of the modal -->
+          <h5 class="modal-title" id="forgotModalLabel">Forgot Password</h5> <!-- Title of the modal -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button> <!-- Close button for the modal -->
+        </div>
+        <div class="modal-body"> <!-- Body section of the modal -->
+          <form id="forgotForm"> <!-- Form for forgot password -->
+            <label class="form-label">Email Address</label> <!-- Label for email input -->
+            <input type="email" class="form-control mb-3" placeholder="Enter your email" required> <!-- Email input field -->
+            <button type="submit" class="btn btn-primary w-100">Send Reset Link</button> <!-- Submit button to send the reset link -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Welcome Section -->
+<section id="home" class="p-5 text-center"> <!-- Welcome section with padding and centered text -->
+    <h1 id="welcomeMessage" class="mb-4">Welcome to Grand Mall!</h1> <!-- Main welcome message -->
+    <p>Explore a wide range of shopping, dining, and entertainment experiences.</p> <!-- Description of the mall's offerings -->
+    <!-- Added Button -->
+    <a href="../Departments.html" class="btn btn-primary">Explore Now</a> <!-- Button to explore more -->
+</section>
+
+    <!-- Main Content: Services Section -->
+    <section id="services" class="container mt-5"> <!-- Services section with margin top -->
+        <h2 class="text-center mb-4">Our Services</h2> <!-- Title for services section -->
+        <div class="row g-4"> <!-- Row for service cards with gap -->
+            <!-- Shopping Service -->
+            <div class="col-md-4"> <!-- Column for shopping service card -->
+                <div class="card h-100 shadow"> <!-- Card container with shadow -->
+                    <a href="../Departments.html#fashion"> <!-- Link to fashion section -->
+                        <img src="../grand.webp" class="card-img-top" alt="Shopping"> <!-- Image for shopping service -->
+                    </a>
+                    <div class="card-body"> <!-- Body of the card -->
+                        <h5 class="card-title">Shopping</h5> <!-- Title for shopping service -->
+                        <p class="card-text">Discover exclusive brands and amazing deals.</p> <!-- Description of shopping service -->
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Dining Service -->
+            <div class="col-md-4"> <!-- Column for dining service card -->
+                <div class="card h-100 shadow"> <!-- Card container with shadow -->
+                    <a href="../Departments.html#Food"> <!-- Link to dining section -->
+                        <img src="../Dining.webp" class="card-img-top" alt="Dining"> <!-- Image for dining service -->
+                    </a>
+                    <div class="card-body"> <!-- Body of the card -->
+                        <h5 class="card-title">Dining</h5> <!-- Title for dining service -->
+                        <p class="card-text">Enjoy delicious meals at top-rated restaurants.</p> <!-- Description of dining service -->
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Entertainment Service -->
+            <div class="col-md-4"> <!-- Column for entertainment service card -->
+                <div class="card h-100 shadow"> <!-- Card container with shadow -->
+                    <a href="../Departments.html#entertainment"> <!-- Link to entertainment section -->
+                        <img src="../kids erea.webp" class="card-img-top" alt="Entertainment"> <!-- Image for entertainment service -->
+                    </a>
+                    <div class="card-body"> <!-- Body of the card -->
+                        <h5 class="card-title">Entertainment</h5> <!-- Title for entertainment service -->
+                        <p class="card-text">Experience fun-filled activities for all ages.</p> <!-- Description of entertainment service -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<footer class="bg-dark text-light text-center p-4 mt-5"> <!-- Footer section with dark background and light text -->
+  <p>&copy; 2024 Grand Mall. All Rights Reserved.</p> <!-- Copyright notice -->
+  <i class="bi bi-info-circle" style="font-size: 30px; color: rgb(255, 255, 255);"></i> <!-- Info icon from Bootstrap Icons -->
+  <a href="../AboutGrand/about.html" class="footer-link">About Us</a> | <!-- Link to About Us page -->
+  <a href="../contact/index.html" class="footer-link">Contact</a> <!-- Link to Contact page -->
+</footer>
+
+       <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <!-- Links to Bootstrap JS for functionality -->
+    <script src="script.js"></script> <!-- Links to custom JavaScript file -->
+</body>
+</html> <!-- Closes the HTML document -->

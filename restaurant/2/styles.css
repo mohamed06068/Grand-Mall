@@ -1,0 +1,18 @@
+#contact {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a {
+  color: #495057;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff4500;
+}
+html {
+  scroll-behavior: smooth;
+}
