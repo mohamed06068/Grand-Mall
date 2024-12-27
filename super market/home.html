@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" >Supermarket Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#FruitsVegetables">Fruits & Vegetables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#FeaturedProducts">Featured Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Dairy">Dairy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Meat">Meat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Seafood">Seafood</a></li>
+                    <li class="nav-item">
+                        <button data-quantity="0" class="btn-cart">
+                          <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
+                            <title>cart</title>
+                            <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
+                          </svg>
+                          <span class="quantity"></span>
+                        </button>
+                      </li>
+
+                </ul>
+                <form class="d-flex ms-3">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search products">
+                </form>
+            </div>
+            <a href="#" class="btn btn-outline-light rounded-pill stylish-link" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="fas fa-sign-in-alt me-2"></i>Login
+            </a>
+            <a href="#" class="btn btn-outline-light rounded-pill stylish-link" data-bs-toggle="modal" data-bs-target="#registerModal">
+                <i class="fas fa-user-plus me-2"></i>Register Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control mb-3" placeholder="Enter your full name" required>
+                        <label class="form-label">Email</label>
+                        <input type="email" id="resetEmail" class="form-control mb-3" placeholder="Enter your email" required>
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control mb-3" placeholder="Enter your password" required>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <label class="form-label">Username</label>
+                        <input type="text" id="username" class="form-control mb-3" placeholder="Enter your username" required>
+                        <label class="form-label">Password</label>
+                        <input type="password" id="password" class="form-control mb-3" placeholder="Enter your password" required>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Forgot Password?</a>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reset Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="forgotPasswordForm">
+                        <label class="form-label">Email</label>
+                        <input type="email" id="resetEmail" class="form-control mb-3" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="container-fluid text-white py-5" style="background: linear-gradient(to right, #28a745, #218838);">
+        <div class="row text-center text-md-start align-items-center">
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Fruits & Vegetables</h1>
+                <p>Enjoy a vibrant array of fresh fruits and vegetables, carefully selected to provide you with the essential nutrients and flavors for a healthy lifestyle.</p>
+                                <button class="btn btn-light btn-lg" onclick="showModal('Fruits & Vegetables')">Shop Now</button>
+            </div>
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Featured Products</h1>
+                <p>Explore our handpicked selection of featured products, showcasing the best quality and value to enhance your shopping experience.</p>
+                                <button class="btn btn-light btn-lg" onclick="showModal('Featured Products')">Shop Now</button>
+            </div>
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Dairy</h1>
+                <p>Discover our fresh and nutritious dairy products, sourced from local farms to ensure the highest quality and taste for you and your family.</p>
+                                <button class="btn btn-light btn-lg" onclick="showModal('Dairy')">Shop Now</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <main class="container my-4">
+        <!-- Hero Section -->
+<section class="hero-section">
+    <div>
+        <h1>Welcome to Our Supermarket</h1>
+        <p>Fresh products delivered to your doorsteps</p>
+        <button class="custom-btn">Shop Now</button>
+    </div>
+    <div>
+        <img src="supermarket.webp" alt="Supermarket" class="hero-image" width="500px" height="300px">
+    </div>
+</section>
+
+<!-- Featured Products Section -->
+<section id="FeaturedProducts">
+    <div class="section">
+        <h2>Featured Products</h2>
+        <div class="product-cards">
+            <div class="card">
+                <img src="1.jpg"  class="card-img-top" alt="Product 1">
+                <h3>Fresh Apples</h3>
+                <p class="product-price">$2.99 / lb</p>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="2.jpg"  class="card-img-top" alt="Product 2">
+                <h3>Organic Bananas</h3>
+                <p class="product-price">$1.49 / bunch</p>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="3.jpg"  class="card-img-top" alt="Product 3">
+                <h3>Fresh Milk</h3>
+                <p class="product-price">$3.49 / gallon</p>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fruits & Vegetables Section -->
+<section id="FruitsVegetables" class="section">
+    <h2>Fruits & Vegetables</h2>
+    <div class="row g-3 mt-3">
+        <!-- Apple Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="1.2.jpg" class="card-img-top" alt="Apple">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:green">Fresh Apples</h5>
+                    <h6 class="card-text">Crisp and juicy apples, perfect for snacks or baking.</h6>
+                </div>
+                <div class="product-price">$2.99/lb</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Carrot Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="2.2.jpg" class="card-img-top" alt="Carrot">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:orange">Organic Carrots</h5>
+                    <h6 class="card-text">Sweet and crunchy, great for salads or cooking.</h6>
+                </div>
+                <div class="product-price">$1.99/lb</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Broccoli Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="3.3.jpg" class="card-img-top" alt="Broccoli">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:green">Fresh Broccoli</h5>
+                    <h6 class="card-text">Healthy and packed with nutrients.</h6>
+                </div>
+                <div class="product-price">$3.49/lb</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dairy Section -->
+<section id="Dairy" class="section mt-5">
+    <h2>Dairy</h2>
+    <div class="row g-3 mt-3">
+        <!-- Milk Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="milk.png" class="card-img-top" alt="Milk">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:blue">Whole Milk</h5>
+                    <h6 class="card-text">Rich and creamy milk, perfect for your daily needs.</h6>
+                </div>
+                <div class="product-price">$1.49</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Cheese Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="cheese.png" class="card-img-top" alt="Cheese">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:goldenrod">Cheddar Cheese</h5>
+                    <h6 class="card-text">Sharp and creamy cheddar cheese, perfect for sandwiches.</h6>
+                </div>
+                <div class="product-price">$5.99</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Butter Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="butter.png" class="card-img-top" alt="Butter">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:yellow">Organic Butter</h5>
+                    <h6 class="card-text">Rich and smooth butter for your cooking and baking.</h6>
+                </div>
+                <div class="product-price">$3.99</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Meat Section -->
+<section id="Meat" class="section mt-5">
+    <h2>Meat</h2>
+    <div class="row g-3 mt-3">
+        <!-- Chicken Breast Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="chicken.png" class="card-img-top" alt="Chicken Breast" style="width: auto;height: auto;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:darkred">Boneless Chicken Breast</h5>
+                    <h6 class="card-text">Tender and juicy chicken breast, perfect for grilling or baking.</h6>
+                </div>
+                <div class="product-price">$5.99/lb</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Beef Steak Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="steak.png" class="card-img-top" alt="Beef Steak">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:darkbrown">Premium Beef Steak</h5>
+                    <h6 class="card-text">Juicy and flavorful beef steak, ideal for grilling or pan-searing.</h6>
+                </div>
+                <div class="product-price">$9.99/lb</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Lamb Chops Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="LambChops.png"  class="card-img-top" alt="Lamb Chops">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:forestgreen">Tender Lamb Chops</h5>
+                    <h6 class="card-text">Deliciously tender lamb chops, perfect for grilling or roasting.</h6>
+                </div>
+                <div class="product-price">$14.99/lb</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seafood Section -->
+<section id="Seafood" class="section mt-5">
+    <h2>Seafood</h2>
+    <div class="row g-3 mt-3">
+        <!-- Salmon Fillets Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="salamon.png" class="card-img-top" alt="Salmon Fillets">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:salmon">Fresh Salmon Fillets</h5>
+                    <h6 class="card-text">Rich and tender salmon fillets, perfect for grilling or baking.</h6>
+                </div>
+                <div class="product-price">$12.99/lb</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Shrimp Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="LargeShrimp.png" class="card-img-top" alt="Shrimp">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:darkslategray">Large Shrimp</h5>
+                    <h6 class="card-text">Sweet and succulent shrimp, great for sautéing or boiling.</h6>
+                </div>
+                <div class="product-price">$8.99/lb</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+        <!-- Lobster Tail Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="LobsterTail.png" class="card-img-top" alt="Lobster Tail">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:red">Lobster Tail</h5>
+                    <h6 class="card-text">Delicious and tender lobster tails, perfect for a special dinner.</h6>
+                </div>
+                <div class="product-price">$19.99/ea</div>
+                <button class="btn btn-primary custom-btn">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+</section>
+
+    
+        
+    </main>
+
+    <!-- Shop Modal -->
+    <div class="modal fade" id="shopModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shopModalLabel">Shop Now</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You selected the <span id="categoryName"></span> category. Browse our collection now!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showModal(category) {
+            document.getElementById("categoryName").textContent = category;
+            new bootstrap.Modal(document.getElementById('shopModal')).show();
+        }
+    </script>
+
+    <footer class="bg-dark text-light text-center p-4 mt-5">
+        <p>&copy; 2024 Supermarket Store. All Rights Reserved.</p>
+        <i class="bi bi-info-circle" style="font-size: 30px; color: rgb(255, 255, 255);"></i>
+        <a href="2/about.html" class="footer-link">About Us</a> |
+        <a href="2/index.html" class="footer-link">Contact</a>
+    </footer>
+</body>
+</html>

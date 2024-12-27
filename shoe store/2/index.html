@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoes Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">shoes Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> 
+                    <li class="nav-item"><a class="nav-link" href="../home.html#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../home.html#WomenShoes">Women Shoes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../home.html#ChildrenShoes">Children Shoes</a></li>
+                    <li class="nav-item">
+                        <button data-quantity="0" class="btn-cart">
+                          <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
+                            <title>cart</title>
+                            <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
+                          </svg>
+                          <span class="quantity"></span>
+                        </button>
+                      </li>
+                </ul>
+                <form class="d-flex ms-3">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Enter keyword">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Contact Us Section -->
+<div class="container py-5" id="contact">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <div class="row">
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+        <!-- Contact Details -->
+        <div class="col-md-6 text-center">
+            <h5>Reach Out to Us</h5>
+            <p><i class="bi bi-telephone-fill me-2"></i>+123-456-7890</p>
+            <p><i class="bi bi-envelope-fill me-2"></i>support@clothingstore.com</p>
+            <p><i class="bi bi-geo-alt-fill me-2"></i>123 Fashion Avenue, Style City</p>
+            <div class="social-icons mt-4">
+                <a href="#" class="text-dark me-3"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a>
+                <a href="#" class="text-dark me-3"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a>
+                <a href="#" class="text-dark"><i class="bi bi-twitter" style="font-size: 1.5rem;"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="shopModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shopModalLabel">Shop Now</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You selected the <span id="categoryName"></span> category. Browse our collection now!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

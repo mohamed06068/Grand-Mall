@@ -1,0 +1,172 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+ /* padding-top: 70px; /* Adjust based on the height of the header */
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030; /* Ensures it stays on top of other elements */
+  background-color: #343a40; /* Optional: Set a background color for visibility */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a floating effect */
+}
+
+/* Header */
+header {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem 0;
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Aligns the navbar with the top of the page */
+    width: 100%; /* Ensures the navbar spans the full width of the page */
+    z-index: 1030; /* Keeps it above other elements */
+}
+
+header h1 {
+  margin: 0;
+}
+
+.nav-link {
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #f39c12;
+}
+
+/* Carousel Styling */
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Section Headings */
+.section h2 {
+  border-bottom: 3px solid #f39c12;
+  padding-bottom: 0.5rem;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.card img {
+  height: 200px;
+height: 200px;
+  /* object-fit: cover; */
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.modal-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.modal-body {
+  padding: 20px;
+}
+.form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #444;
+}/* From Uiverse.io by Julian956 */ 
+.btn-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.btn-cart::after {
+  content: attr(data-quantity);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s linear;
+  top: -90%;
+}
+
+.icon-cart {
+  width: 25.38px;
+  height: 30.52px;
+  transition: .2s linear;
+  padding-bottom: 10px;
+}
+
+.icon-cart path {
+  fill: rgb(0, 0, 0);
+  transition: .2s linear;
+}
+
+.btn-cart:hover > .icon-cart {
+  transform: scale(1.2);
+}
+
+.btn-cart:hover > .icon-cart path {
+  fill: rgb(186, 34, 233);
+}
+
+.btn-cart:hover::after {
+  visibility: visible;
+  opacity: .5;
+  top: 70%;
+}
+
+.quantity {
+  display: none;
+}

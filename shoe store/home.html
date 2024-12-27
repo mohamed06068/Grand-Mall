@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwear Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> 
+        <div class="container">
+            <a class="navbar-brand" href="#">Footwear Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../home/home.html">Grand Mall</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#MenShoes">Men's Shoes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#WomenShoes">Women's Shoes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ChildrenShoes">Children's Shoes</a></li>
+                     <li class="nav-item">
+            <button data-quantity="0" class="btn-cart">
+              <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
+                <title>cart</title>
+                <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
+              </svg>
+              <span class="quantity"></span>
+            </button>
+          </li>
+                </ul>
+                <form class="d-flex ms-3">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Enter keyword">
+                </form>
+            </div>
+            <a href="#" class="btn btn-outline-light rounded-pill stylish-link" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="fas fa-sign-in-alt me-2"></i>Login
+            </a>
+            <a href="#" class="btn btn-outline-light rounded-pill stylish-link" data-bs-toggle="modal" data-bs-target="#registerModal">
+                <i class="fas fa-user-plus me-2"></i>Register Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control mb-3" placeholder="Enter your full name" required>
+                        <label class="form-label">Email</label>
+                        <input type="email" id="resetEmail" class="form-control mb-3" placeholder="Enter your email" required>
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control mb-3" placeholder="Enter your password" required>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <label class="form-label">Username</label>
+                        <input type="text" id="username" class="form-control mb-3" placeholder="Enter your username" required>
+                        <label class="form-label">Password</label>
+                        <input type="password" id="password" class="form-control mb-3" placeholder="Enter your password" required>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Forgot Password?</a>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reset Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="forgotPasswordForm">
+                        <label class="form-label">Email</label>
+                        <input type="email" id="resetEmail" class="form-control mb-3" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="container-fluid text-white py-5" style="background: linear-gradient(to right, #ff7f50, #ff4500);">
+        <div class="row text-center text-md-start align-items-center">
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Men's Shoes</h1>
+                <p>Explore our collection of stylish and comfortable shoes for men.</p>
+                <button class="btn btn-light btn-lg" onclick="showModal('Men')">Shop Now</button>
+            </div>
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Women's Shoes</h1>
+                <p>Discover fun and durable footwear for Women of all ages.</p>
+                <button class="btn btn-light btn-lg" onclick="showModal('Women')">Shop Now</button>
+            </div>
+            <div class="col-md-4" style="padding-top: 10px;">
+                <h1>Children's Shoes</h1>
+                <p>Discover fun and durable footwear for kids of all ages.</p>
+                <button class="btn btn-light btn-lg" onclick="showModal('Children')">Shop Now</button>
+            </div>
+        </div>
+    </div>
+        </div>
+        
+    </div>
+    
+
+    <!-- Categories Section -->
+    <main class="container my-4">
+        <section id="MenShoes" class="section">
+            <h2>Men's Shoes</h2>
+            <div class="row g-3 mt-3">
+                <!-- Card for Men's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="1.jpg" class="card-img-top" alt="Men's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Stylish Sneakers</h5>
+                            <h6 class="card-text">These sneakers are perfect for casual outings and provide great comfort.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            <input type="radio" name="star2" id="star2-5" value="5">
+                            <label for="star2-5" title="5 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star2-4" value="4">
+                            <label for="star2-4" title="4 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star2-3" value="3">
+                            <label for="star2-3" title="3 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star2-2" value="2">
+                            <label for="star2-2" title="2 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star2-1" value="1">
+                            <label for="star2-1" title="1 star">&#9733;</label>
+                        </div>
+                        <div class="product-price">$69.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <!-- Card for Men's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="2.jpg" class="card-img-top" alt="Men's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Formal Leather Shoes</h5>
+                            <h6 class="card-text">Elegant leather shoes suitable for formal occasions.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            <input type="radio" name="star1" id="star1-5" value="5">
+                            <label for="star1-5" title="5 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star1-4" value="4">
+                            <label for="star1-4" title="4 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star1-3" value="3">
+                            <label for="star1-3" title="3 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star1-2" value="2">
+                            <label for="star1-2" title="2 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star1-1" value="1">
+                            <label for="star1-1" title="1 star">&#9733;</label>        
+                    </div>
+                        <div class="product-price">$89.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <!-- Card for Men's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="3.jpg" class="card-img-top" alt="Men's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Casual Loafers</h5>
+                            <h6 class="card-text">Comfortable loafers that are perfect for everyday wear.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            <input type="radio" name="star1" id="star3-5" value="5">
+                            <label for="star3-5" title="5 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star3-4" value="4">
+                            <label for="star3-4" title="4 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star3-3" value="3">
+                            <label for="star3-3" title="3 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star3-2" value="2">
+                            <label for="star3-2" title="2 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star3-1" value="1">
+                            <label for="star3-1" title="1 star">&#9733;</label>
+                    </div>
+                        <div class="product-price">$59.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Women's Shoes Section -->
+        <section id="WomenShoes" class="section mt-5">
+            <h2> Women's Shoes</h2>
+            <div class="row g-3 mt-3">
+                <!-- Card for Women's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="11.jpg" class="card-img-top" alt="Women's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Elegant Heels</h5>
+                            <h6 class="card-text">These heels are perfect for a night out or special occasions.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            
+                            <input type="radio" name="star1" id="star31-5" value="5">
+                            <label for="star31-5" title="5 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star31-4" value="4">
+                            <label for="star31-4" title="4 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star31-3" value="3">
+                            <label for="star31-3" title="3 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star31-2" value="2">
+                            <label for="star31-2" title="2 stars">&#9733;</label>
+                    
+                            <input type="radio" name="star1" id="star31-1" value="1">
+                            <label for="star31-1" title="1 star">&#9733;</label>
+                        
+                    </div>
+                        <div class="product-price">$79.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <!-- Card for Women's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="22.jpg" class="card-img-top" alt="Women's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Comfortable Flats</h5>
+                            <h6 class="card-text">Stylish flats that provide all-day comfort.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            <input type="radio" name="star2" id="star22-5" value="5">
+                            <label for="star22-5" title="5 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star22-4" value="4">
+                            <label for="star22-4" title="4 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star22-3" value="3">
+                            <label for="star22-3" title="3 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star22-2" value="2">
+                            <label for="star22-2" title="2 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star22-1" value="1">
+                            <label for="star22-1" title="1 star">&#9733;</label>
+                        </div>
+                        <div class="product-price">$49.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <!-- Card for Women's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="33.jpg" class="card-img-top" alt="Women's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Sporty Sneakers</h5>
+                            <h6 class="card-text">Perfect for workouts and casual outings.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            <input type="radio" name="star2" id="star12-5" value="5">
+                            <label for="star12-5" title="5 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star12-4" value="4">
+                            <label for="star12-4" title="4 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star12-3" value="3">
+                            <label for="star12-3" title="3 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star12-2" value="2">
+                            <label for="star12-2" title="2 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star12-1" value="1">
+                            <label for="star12-1" title="1 star">&#9733;</label>
+                        </div>
+                        <div class="product-price">$69.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Children's Shoes Section -->
+        <section id="ChildrenShoes" class="section mt-5">
+            <h2>Children's Shoes</h2>
+            <div class="row g-3 mt-3">
+                <!-- Card for Children's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="111.jpg" class="card-img-top" alt="Children's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Fun Sneakers</h5>
+                            <h6 class="card-text">Colorful sneakers designed for active kids.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            <input type="radio" name="star2" id="star32-5" value="5">
+                            <label for="star32-5" title="5 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star32-4" value="4">
+                            <label for="star32-4" title="4 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star32-3" value="3">
+                            <label for="star32-3" title="3 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star32-2" value="2">
+                            <label for="star32-2" title="2 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star32-1" value="1">
+                            <label for="star32-1" title="1 star">&#9733;</label>
+                        </div>
+                        <div class="product-price">$39.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <!-- Card for Children's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="222.jpg" class="card-img-top" alt="Children's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Cute Sandals</h5>
+                            <h6 class="card-text">Perfect for summer days at the beach or park.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            <input type="radio" name="star2" id="star42-5" value="5">
+                            <label for="star42-5" title="5 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star42-4" value="4">
+                            <label for="star42-4" title="4 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star42-3" value="3">
+                            <label for="star42-3" title="3 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star42-2" value="2">
+                            <label for="star42-2" title="2 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star42-1" value="1">
+                            <label for="star42-1" title="1 star">&#9733;</label>
+                        </div>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+                <!-- Card for Children's Shoes -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="333.jpg" class="card-img-top" alt="Children's Shoe">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:navy">Durable Boots</h5>
+                            <h6 class="card-text">Sturdy boots for outdoor adventures.</h6>
+                        </div>
+                        <div class="rating d-flex justify-content-center">
+                            <input type="radio" name="star2" id="star21-5" value="5">
+                            <label for="star21-5" title="5 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star21-4" value="4">
+                            <label for="star21-4" title="4 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star21-3" value="3">
+                            <label for="star21-3" title="3 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star21-2" value="2">
+                            <label for="star21-2" title="2 stars">&#9733;</label>
+
+                            <input type="radio" name="star2" id="star21-1" value="1">
+                            <label for="star21-1" title="1 star">&#9733;</label>
+                        </div>
+                        <div class="product-price">$49.99</div>
+                        <button class="btn btn-primary custom-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <!-- Customer Reviews Section -->
+<!-- Customer Reviews Section -->
+<section id="CustomerReviews" class="section mt-5">
+    <h2>Customer Reviews</h2>
+    <div class="row g-3 mt-3">
+        <!-- Review Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="122.jpg" alt="John Doe" class="img-fluid rounded-circle mb-3" style="width: 80px; height: 80px;">
+                    <h5 class="card-title" style="color:navy">John Doe</h5>
+                    <p class="card-text">"I absolutely love the stylish shirt I purchased! The fit is perfect and the quality is outstanding."</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="123.jpg" alt="Jane Smith" class="img-fluid rounded-circle mb-3" style="width: 80px; height: 80px;">
+                    <h5 class="card-title" style="color:navy">Jane Smith</h5>
+                    <p class="card-text">"The elegant dress I bought for a wedding was a hit! I received so many compliments."</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="124.jpg" alt="Emily Johnson" class="img-fluid rounded-circle mb-3" style="width: 80px; height: 80px;">
+                    <h5 class="card-title" style="color:navy">Emily Johnson</h5>
+                    <p class="card-text">"The children's clothing is durable and fun! My kids love their new t-shirts."</p>
+                    <div class="product-rating">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+        <!-- Additional Review Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="24.jpg" alt="Michael Brown" class="img-fluid rounded-circle mb-3" style="width: 80px; height: 80px;">
+                    <h5 class="card-title" style="color:navy">Michael Brown</h5>
+                    <p class="card-text">"The formal jacket I purchased is absolutely stunning! It fits perfectly and looks great for business meetings."</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+        <!-- Additional Review Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="25.jpg" alt="Sarah Wilson" class="img-fluid rounded-circle mb-3" style="width: 80px; height: 80px;">
+                    <h5 class="card-title" style="color:navy">Sarah Wilson</h5>
+                    <p class="card-text">"I bought the chic skirt for a party, and it was a hit! The quality is fantastic and it’s very comfortable."</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+        <!-- Additional Review Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="26.jpg" alt="David Lee" class="img-fluid rounded-circle mb-3" style="width: 80px; height: 80px;">
+                    <h5 class="card-title" style="color:navy">David Lee</h5>
+                    <p class="card-text">"The fun t-shirt for my son is vibrant and holds up well after multiple washes. Highly recommend!"</p>
+                    <div class="product-rating">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    <section class="our-services py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Why Shop With Us</h2>
+                <p class="section-subtitle">Discover what makes us the preferred choice for your wardrobe needs.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-4">
+                    <div class="service-box text-center p-4">
+                        <div class="service-icon mb-3">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h5 class="service-title">Fast Shipping</h5>
+                        <p class="service-description">Enjoy quick delivery with our trusted logistics partners, ensuring your items arrive on time.</p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-4">
+                    <div class="service-box text-center p-4">
+                        <div class="service-icon mb-3">
+                            <i class="bi bi-recycle"></i>
+                        </div>
+                        <h5 class="service-title">Easy Returns</h5>
+                        <p class="service-description">Shop with confidence knowing that returns and exchanges are simple and convenient.</p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-4">
+                    <div class="service-box text-center p-4">
+                        <div class="service-icon mb-3">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h5 class="service-title">Quality Guarantee</h5>
+                        <p class="service-description">We stand behind our products with a commitment to premium quality and durability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Modal -->
+    <div class="modal fade" id="shopModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shopModalLabel">Shop Now</h5>
+ <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You selected the <span id="categoryName"></span> category. Browse our collection now!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showModal(category) {
+            document.getElementById("categoryName").textContent = category;
+            new bootstrap.Modal(document.getElementById('shopModal')).show();
+        }
+    </script>
+
+    <footer class="bg-dark text-light text-center p-4 mt-5">
+        <p>&copy; 2024 Footwear Store. All Rights Reserved.</p>
+        <i class="bi bi-info-circle" style="font-size: 30px; color: rgb(255, 255, 255);"></i>
+        <a href="2/about.html" class="footer-link">About Us</a> |
+        <a href="2/index.html" class="footer-link">Contact</a>
+    </footer>    
+</body>
+</html>
+
+
+
+
+
+<form >
+  <input type="radio" name="asd" id="asd">
+  <label for="asd">asd</label>
+
+
+
+
+
+</form>

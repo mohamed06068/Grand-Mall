@@ -1,0 +1,429 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search-bar input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background: linear-gradient(to right, #009688, #00796b);  /* Updated to teal color */
+  color: white;
+}
+
+.hero-section div {
+  width: 48%;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+}
+
+.hero-section button {
+  padding: 0.8rem 1.5rem;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.custom-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-btn:hover {
+  background-color: #004d40;  /* Darker shade for hover effect */
+  transform: translateY(-2px);
+}
+
+.custom-btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 121, 108, 0.5);
+}
+
+.custom-btn:active {
+  background-color: #003c34;
+  transform: translateY(2px);
+}
+
+/* Featured Products Section */
+.featured-products {
+  background-color: #f9f9f9;
+  padding: 3rem 2rem;
+}
+
+.featured-products h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card {
+  width: 30%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+#card-img-top {
+  width: 100%; /* Make the image take the full width of the card */
+  height: 200px; /* Set a fixed height for the image */
+  object-fit: cover; /* This will ensure the image covers the area without stretching */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  color: #009688;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card .btn {
+  background-color: #009688;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.card .btn:hover {
+  background-color: #004d40;
+}
+
+/* Categories Section */
+.categories {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.category {
+  text-align: center;
+  width: 30%;
+}
+
+.category img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.category h3 {
+  margin-top: 0.8rem;
+}
+
+/* Fruits & Vegetables Section */
+#FruitsVegetables {
+  background-color: #f9f9f9;
+  padding: 3rem 2rem;
+}
+
+#FruitsVegetables h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#FruitsVegetables .card {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#FruitsVegetables .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+#FruitsVegetables h5 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Dairy Section */
+#Dairy {
+  background-color: #f9f9f9;
+  padding: 3rem 2rem;
+}
+
+#Dairy h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#Dairy .card {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#Dairy .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+#Dairy h5 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Stylish Links */
+.stylish-link {
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.stylish-link:hover {
+  color: #fff;
+  background: linear-gradient(to right, #009688, #00796b);
+  border-color: transparent;
+  margin-left: 5px;                  /* login and register movecard-img-topnt */      
+  margin-right: 5px;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* General Modal Styles */
+.modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Header */
+.modal-header {
+  background-color: #333; /* Match header background */
+  color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px;
+}
+
+/* Form Labels */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Form Inputs */
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 5px; /* Match search bar */
+  padding: 10px;
+  transition: border-color 0.30s;
+}
+
+.form-control:focus {
+  border-color: #009688; /* Teal color on focus */
+  box-shadow: 0 0 5px rgba(0, 150, 136, 0.5); /* Teal shadow */
+}
+
+
+.btn-primary {
+  background-color: #009688; /* Teal color */
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #00796b; /* Darker teal on hover */
+  transform: translateY(-2px);
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 150, 136, 0.5);
+}
+
+.btn-primary:active {
+  background-color: #00796b; /* Darker shade for active */
+  transform: translateY(2px);
+}
+
+/* Link Styles */
+a {
+  color: #009688; /* Teal color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+  .modal-dialog {
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+  }
+}
+
+.btn-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.btn-cart::after {
+  content: attr(data-quantity);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s linear;
+  top: -90%;
+}
+
+.icon-cart {
+  width: 25.38px;
+  height: 30.52px;
+  transition: .2s linear;
+  padding-bottom: 10px;
+}
+
+.icon-cart path {
+  fill: rgb(189, 186, 186);
+  transition: .2s linear;
+}
+
+.btn-cart:hover > .icon-cart {
+  transform: scale(1.2);
+}
+
+.btn-cart:hover > .icon-cart path {
+  fill: rgb(186, 34, 233);
+}
+
+.btn-cart:hover::after {
+  visibility: visible;
+  opacity: .5;
+  top: 70%;
+}
+
+.quantity {
+  display: none;
+}
